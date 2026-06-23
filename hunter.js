@@ -7,6 +7,9 @@ const core = require("oci-core");
 const identity = require("oci-identity");
 
 const privateKey = fs.readFileSync(process.env.PRIVATE_KEY_PATH, "utf8");
+console.log("Key length:", privateKey.length);
+console.log("First line:", privateKey.split("\n")[0]);
+console.log("Last line:", privateKey.split("\n").slice(-1)[0]);
 console.log("Region:", process.env.OCI_REGION);
 console.log("REGION:", process.env.OCI_REGION);
 console.log("COMPARTMENT:", process.env.OCI_COMPARTMENT_ID);
