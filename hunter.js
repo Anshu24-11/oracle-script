@@ -105,9 +105,7 @@ async function findUbuntuImage() {
 }
 
 async function launch(adName, shape, imageId) {
-  const sshKey = fs
-    .readFileSync(process.env.SSH_PUBLIC_KEY_PATH, "utf8")
-    .trim();
+  const sshKey = process.env.SSH_PUBLIC_KEY.trim();
 
   console.log("SSH KEY RAW:");
   console.log(JSON.stringify(sshKey));
