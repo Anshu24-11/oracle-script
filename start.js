@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const privateKey = process.env.OCI_PRIVATE_KEY;
+const privateKey = fs.readFileSync(process.env.PRIVATE_KEY_PATH, "utf8");
 
 fs.writeFileSync("./private.pem", privateKey);
 
